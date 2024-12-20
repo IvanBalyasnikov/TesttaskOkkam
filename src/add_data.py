@@ -14,7 +14,7 @@ import asyncio
 
 async def main():
     async with async_session_maker() as session:
-        test = await RespondentsRepository(session).query_audience("where id > 0 and id < 2")
+        test = await RespondentsRepository(session).query_audience("id < 2")
         if test:
             return
     df = pd.read_csv("data 1.csv")
